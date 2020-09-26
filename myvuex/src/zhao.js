@@ -31,7 +31,7 @@ class Store {
     if(path.length){
       // path有值，子模块
       const parent = path.slice(0, -1).reduce((module, key) => {
-        return module.children(key);
+        return module.children[key];
       }, this.root);
       parent.children[path[path.length - 1]] = newModule;
     }else{
